@@ -88,6 +88,10 @@ sed -i 's/optional: true/dhcp-identifier: mac/g' /etc/netplan/00-installer-confi
 # cleans out all of the cloud-init cache / logs - this is mainly cleaning out networking info
 sudo cloud-init clean --logs
 
+# set user to change password at first logon
+# chage -d 0 username
+chage -d 0 itadmin
+
 #cleanup shell history
 cat /dev/null > ~/.bash_history && history -c
 history -w
